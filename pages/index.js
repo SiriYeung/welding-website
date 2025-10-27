@@ -30,6 +30,54 @@ export default function Home() {
     }
   ]
 
+  const serviceCategories = [
+    {
+      title: 'Industrial Welding',
+      img: '/images/services/industrial.png',
+      alt: 'Industrial Welding',
+      description:
+        'We provide on-site repairs, maintenance, and custom fabrication for machinery, heavy equipment, and facility infrastructure across the GTA. Minimize downtime with our rapid mobile service.',
+    },
+    {
+      title: 'Commercial Fabrication & Repair',
+      img: '/images/services/commercial.png',
+      alt: 'Commercial Welding',
+      description:
+        'Professional on-site welding for commercial properties, including structural steel, security gates, metal railings, and tenant improvements. Reliable service that meets all commercial codes.',
+    },
+    {
+      title: 'Residential Welding',
+      img: '/images/services/residentail.png',
+      alt: 'Residential Welding',
+      description:
+        'Convenient mobile welding services for your home. We handle all repairs, from damaged metal fences, patio furniture, and railings to custom home accent pieces and decorative metal fabrication.',
+    },
+  ]
+
+  const weldingProjects = [
+    {
+      category: 'Industrial Projects',
+      images: [
+        '/images/projects-compared/industrial-1.png',
+        '/images/projects-compared/industrial-2.png',
+      ]
+    },
+    {
+      category: 'Commercial Projects',
+      images: [
+        '/images/projects-compared/commercial-1.png',
+        '/images/projects-compared/commercial-2.png',
+      ]
+    },
+    {
+      category: 'Residential Projects',
+      images: [
+        '/images/projects-compared/residential-1.png',
+        '/images/projects-compared/residential-2.png',
+      ]
+    },
+  ]
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % reviews.length)
@@ -84,45 +132,19 @@ export default function Home() {
             Category of Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-4">
-                <img
-                  src="/images/industrial.png"
-                  alt="Industrial Welding"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+            {serviceCategories.map((cat, i) => (
+              <div key={i} className="text-center group">
+                <div className="bg-gray-200 rounded-lg overflow-hidden aspect-square mb-4">
+                  <img
+                    src={cat.img}
+                    alt={cat.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{cat.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{cat.description}</p>
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Industrial Welding</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We provide on-site repairs, maintenance, and custom fabrication for machinery, heavy equipment, and facility infrastructure across the GTA. Minimize downtime with our rapid mobile service.
-              </p>
-            </div>
-            <div className="text-center group">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-4">
-                <img
-                  src="/images/Commercial.png"
-                  alt="Commercial Welding"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Commercial Fabrication & Repair</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Professional on-site welding for commercial properties, including structural steel, security gates, metal railings, and tenant improvements. Reliable service that meets all commercial codes.
-              </p>
-            </div>
-            <div className="text-center group">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-4">
-                <img
-                  src="/images/residentail.png"
-                  alt="Residential Welding"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-gray-900">Residential Welding</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Convenient mobile welding services for your home. We handle all repairs, from damaged metal fences, patio furniture, and railings to custom home accent pieces and decorative metal fabrication.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -400,83 +422,22 @@ export default function Home() {
           </h2>
 
           <div className="space-y-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center text-[#ff0000]">Industrial Projects</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-2">
-                    <img
-                      src="https://images.pexels.com/photos/1474993/pexels-photo-1474993.jpeg"
-                      alt="Industrial welding before"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-gray-600 font-semibold">Before</p>
-                </div>
-                <div>
-                  <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-2">
-                    <img
-                      src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg"
-                      alt="Industrial welding after"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-gray-600 font-semibold">After</p>
+            {weldingProjects.map((proj, idx) => (
+              <div key={idx}>
+                <h3 className="text-2xl font-bold mb-6 text-center text-[#ff0000]">{proj.category}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {proj.images.map((imgSrc, imgIdx) => (
+                    <div className="bg-gray-200 rounded-lg overflow-hidden aspect-square mb-2">
+                      <img
+                        src={imgSrc}
+                        alt={`${proj.category} ${imgIdx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center text-[#ff0000]">Commercial Projects</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-2">
-                    <img
-                      src="https://images.pexels.com/photos/8985607/pexels-photo-8985607.jpeg"
-                      alt="Commercial welding before"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-gray-600 font-semibold">Before</p>
-                </div>
-                <div>
-                  <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-2">
-                    <img
-                      src="https://images.pexels.com/photos/1453999/pexels-photo-1453999.jpeg"
-                      alt="Commercial welding after"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-gray-600 font-semibold">After</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center text-[#ff0000]">Residential Projects</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-2">
-                    <img
-                      src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg"
-                      alt="Residential welding before"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-gray-600 font-semibold">Before</p>
-                </div>
-                <div>
-                  <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-2">
-                    <img
-                      src="https://images.pexels.com/photos/1474993/pexels-photo-1474993.jpeg"
-                      alt="Residential welding after"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-gray-600 font-semibold">After</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
