@@ -87,7 +87,7 @@ export default function Home() {
             <div className="text-center group">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-4">
                 <img
-                  src="https://images.pexels.com/photos/1474993/pexels-photo-1474993.jpeg"
+                  src="/images/industrial.png"
                   alt="Industrial Welding"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -100,7 +100,7 @@ export default function Home() {
             <div className="text-center group">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-4">
                 <img
-                  src="https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg"
+                  src="/images/Commercial.png"
                   alt="Commercial Welding"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -113,7 +113,7 @@ export default function Home() {
             <div className="text-center group">
               <div className="bg-gray-200 rounded-lg overflow-hidden h-64 mb-4">
                 <img
-                  src="https://images.pexels.com/photos/8985607/pexels-photo-8985607.jpeg"
+                  src="/images/residentail.png"
                   alt="Residential Welding"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
