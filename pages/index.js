@@ -434,7 +434,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold mb-6 text-center text-[#ff0000]">{proj.category}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {proj.images.map((imgSrc, imgIdx) => (
-                      <div className="bg-gray-200 rounded-lg overflow-hidden aspect-square mb-2">
+                      <div key={imgSrc} className="bg-gray-200 rounded-lg overflow-hidden aspect-square mb-2">
                         <img
                           src={imgSrc}
                           alt={`${proj.category} ${imgIdx + 1}`}
