@@ -6,7 +6,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false)
 
   return (
-    <header className="bg-[#1a2332] text-white shadow-md">
+    <header className="bg-brand-blue text-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="text-xl md:text-2xl font-bold tracking-tight">
@@ -33,7 +33,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <Link
             href="/quote"
-            className="hidden md:inline-block bg-[#ff0000] hover:bg-[#cc0000] text-white px-6 py-2 rounded font-semibold transition-colors"
+            className="hidden md:inline-block bg-brand-red hover:bg-[#cc0000] text-white px-6 py-2 rounded font-semibold transition-colors"
           >
             Get a Quote
           </Link>
@@ -121,7 +121,7 @@ export default function Header() {
             </Link>
             <Link
               href="/quote"
-              className="block mt-4 bg-[#ff0000] hover:bg-[#cc0000] text-white px-6 py-3 rounded font-semibold transition-colors text-center"
+              className="block mt-4 bg-brand-red hover:bg-[#cc0000] text-white px-6 py-3 rounded font-semibold transition-colors text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get a Quote

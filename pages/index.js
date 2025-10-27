@@ -68,7 +68,7 @@ export default function Home() {
             <div className="mt-8">
               <a
                 href="/quote"
-                className="inline-block bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-4 rounded font-semibold text-lg transition-colors"
+                className="inline-block bg-brand-red hover:bg-[#cc0000] text-white px-8 py-4 rounded font-semibold text-lg transition-colors"
               >
                 Get a Free Quote
               </a>
@@ -183,7 +183,7 @@ export default function Home() {
                 <div className="pt-4">
                   <a
                     href="/about"
-                    className="inline-block bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-3 rounded font-semibold transition-colors"
+                    className="inline-block bg-brand-red hover:bg-[#cc0000] text-white px-8 py-3 rounded font-semibold transition-colors"
                   >
                     ABOUT US
                   </a>
@@ -249,7 +249,7 @@ export default function Home() {
                     key={index}
                     onClick={() => setCurrentReview(index)}
                     className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentReview ? 'bg-[#ff0000]' : 'bg-gray-300'
+                      index === currentReview ? 'bg-brand-red' : 'bg-gray-300'
                     }`}
                     aria-label={`Go to review ${index + 1}`}
                   />
@@ -492,7 +492,7 @@ export default function Home() {
           </p>
           <a
             href="/quote"
-            className="inline-block bg-[#ff0000] hover:bg-[#cc0000] text-white px-10 py-4 rounded-lg font-semibold text-lg transition-colors"
+            className="inline-block bg-brand-red hover:bg-[#cc0000] text-white px-10 py-4 rounded-lg font-semibold text-lg transition-colors"
           >
             Get a Free Quote
           </a>

@@ -54,7 +54,7 @@ export default function Footer() {
               </a>
               <Link
                 href="/quote"
-                className="inline-block bg-[#ff0000] hover:bg-[#cc0000] text-white px-8 py-3 rounded font-semibold transition-colors"
+                className="inline-block bg-brand-red hover:bg-[#cc0000] text-white px-8 py-3 rounded font-semibold transition-colors"
               >
                 REQUEST A QUOTE
               </Link>
