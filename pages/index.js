@@ -222,7 +222,7 @@ export default function Home() {
               </div>
               <div className="bg-gray-200 rounded-lg overflow-hidden h-96">
                 <img
-                  src="https://images.pexels.com/photos/1453999/pexels-photo-1453999.jpeg"
+                  src="https://images.pexels.com/photos/2381463/pexels-photo-2381463.jpeg"
                   alt="Welder at work"
                   className="w-full h-full object-cover"
                 />
