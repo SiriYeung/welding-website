@@ -79,6 +79,54 @@ export default function Home() {
     },
   ]
 
+  const serviceColumns = [
+    {
+      title: 'Services',
+      items: [
+        'Metal Fabrication',
+        'Field Welding',
+        'Portable Welding',
+        'Manufacturing Machinery',
+        'New Construction',
+        'Retrofits',
+        'Hard Facing',
+        'Torch Cutting'
+      ]
+    },
+    {
+      title: 'Repairs',
+      items: [
+        'Crack Repair',
+        'Equipment Repair',
+        'Fences and Gate Repair',
+        'Trailer Frames and Axle Repairs',
+        'Dumpster Repairs',
+        'Truck and Fleet Repair'
+      ]
+    },
+    {
+      title: 'Types',
+      items: [
+        'Gas Metal Arc Welding (GMAW)',
+        'Metal Inert Gas Welding (MIG)',
+        'Flux-cored Arc Welding (FCAW or FCA)',
+        'Heliarc, Tungsten Inert Gas Welding (TIG)',
+        'Shielded Metal Arc Welding (SMAW)'
+      ]
+    },
+    {
+      title: 'Materials',
+      items: [
+        'Carbon Steel',
+        'Aluminum',
+        'Cast Iron',
+        'Cast Aluminum',
+        'Stainless Steel',
+        'Pipe'
+      ]
+    }
+  ]
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % reviews.length)
@@ -171,91 +219,19 @@ export default function Home() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Services Column */}
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Services</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Metal Fabrication',
-                    'Field Welding',
-                    'Portable Welding',
-                    'Manufacturing Machinery',
-                    'New Construction',
-                    'Retrofits',
-                    'Hard Facing',
-                    'Torch Cutting'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <a href="/services" className="text-[#ff0000] font-semibold flex items-center hover:underline">
-                    OUR SERVICES <span className="ml-2">→</span>
-                  </a>
+              {serviceColumns.map((column, columnIndex) => (
+                <div key={columnIndex} className="bg-white rounded-lg p-6 shadow-md">
+                  <h3 className="text-2xl font-bold text-[#1a2332] mb-6">{column.title}</h3>
+                  <ul className="space-y-3">
+                    {column.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-center gap-3">
+                        <img src='/images/star.png' className='w-6 h-6' />
+                        <span className="text-gray-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-
-              {/* Repairs Column */}
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Repairs</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Crack Repair',
-                    'Equipment Repair',
-                    'Fences and Gate Repair',
-                    'Trailer Frames and Axle Repairs',
-                    'Dumpster Repairs',
-                    'Truck and Fleet Repair'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Types Column */}
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Types</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Gas Metal Arc Welding (GMAW)',
-                    'Metal Inert Gas Welding (MIG)',
-                    'Flux-cored Arc Welding (FCAW or FCA)',
-                    'Heliarc, Tungsten Inert Gas Welding (TIG)',
-                    'Shielded Metal Arc Welding (SMAW)'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Materials Column */}
-              <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Materials</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Carbon Steel',
-                    'Aluminum',
-                    'Cast Iron',
-                    'Cast Aluminum',
-                    'Stainless Steel',
-                    'Pipe'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </section>
