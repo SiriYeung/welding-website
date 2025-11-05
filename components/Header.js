@@ -10,7 +10,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="text-xl md:text-2xl font-bold tracking-tight">
-            CANADIAN MOBILE WELDING
+            <img src='/images/logo_name.png' alt='Canadian mobile welding' className='w-50 h-50' />
           </Link>
         </div>
 
