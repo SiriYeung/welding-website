@@ -158,7 +158,7 @@ export default function Home() {
         </section>
 
         {/* Our Services */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-100">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Our Services
@@ -170,23 +170,92 @@ export default function Home() {
               The Canadian Mobile Welding is your comprehensive partner for all heavy-duty and commercial welding needs across the GTA. With a fully mobile and equipped unit, we bring precision and reliability directly to your site. Our certified welders specialize in a wide range of materials and applications, ensuring we deliver compliant, durable results every time.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {[
-                'MIG, TIG, Stick & Arc Welding',
-                'Structural Steel Installation',
-                'Aluminum & Stainless Steel Welding',
-                'Custom Metal Fabrication',
-                'Pipe & Tube Welding',
-                'Emergency Breakdown Repair',
-                'Heavy Equipment Repair',
-                'Metal Railing & Gate Installation',
-                'Trailer & Vehicle Frame Repair'
-              ].map((service, i) => (
-                <div key={i} className="flex items-start">
-                  <span className="text-[#ff0000] mr-3 text-xl font-bold">✓</span>
-                  <span className="text-gray-700">{service}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Services Column */}
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Services</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Metal Fabrication',
+                    'Field Welding',
+                    'Portable Welding',
+                    'Manufacturing Machinery',
+                    'New Construction',
+                    'Retrofits',
+                    'Hard Facing',
+                    'Torch Cutting'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <a href="/services" className="text-[#ff0000] font-semibold flex items-center hover:underline">
+                    OUR SERVICES <span className="ml-2">→</span>
+                  </a>
                 </div>
-              ))}
+              </div>
+
+              {/* Repairs Column */}
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Repairs</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Crack Repair',
+                    'Equipment Repair',
+                    'Fences and Gate Repair',
+                    'Trailer Frames and Axle Repairs',
+                    'Dumpster Repairs',
+                    'Truck and Fleet Repair'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Types Column */}
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Types</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Gas Metal Arc Welding (GMAW)',
+                    'Metal Inert Gas Welding (MIG)',
+                    'Flux-cored Arc Welding (FCAW or FCA)',
+                    'Heliarc, Tungsten Inert Gas Welding (TIG)',
+                    'Shielded Metal Arc Welding (SMAW)'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Materials Column */}
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="text-2xl font-bold text-[#1a2332] mb-6">Materials</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Carbon Steel',
+                    'Aluminum',
+                    'Cast Iron',
+                    'Cast Aluminum',
+                    'Stainless Steel',
+                    'Pipe'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-[#ff0000] mr-3 text-lg">🛡</span>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
