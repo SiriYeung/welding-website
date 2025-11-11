@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import type { NextPage } from 'next'
 
-export default function Home() {
-  const [currentReview, setCurrentReview] = useState(0)
+type Review = { text: string; author: string }
+type ServiceCategory = { title: string; img: string; alt: string; description: string }
+type Project = { category: string; images: string[] }
 
-  const reviews = [
+const Home: NextPage = () => {
+  const [currentReview, setCurrentReview] = useState<number>(0)
+
+  const reviews: Review[] = [
     {
       text: "Canadian Mobile Welding saved us thousands in downtime. Their emergency repair was quick, professional, and held up perfectly.",
       author: "Paul D., Site Manager, Toronto Construction"
@@ -31,7 +36,7 @@ export default function Home() {
     }
   ]
 
-  const serviceCategories = [
+  const serviceCategories: ServiceCategory[] = [
     {
       title: 'Industrial Welding',
       img: '/images/services/industrial.png',
@@ -55,7 +60,7 @@ export default function Home() {
     },
   ]
 
-  const weldingProjects = [
+  const weldingProjects: Project[] = [
     {
       category: 'Industrial Projects',
       images: [
@@ -470,3 +475,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

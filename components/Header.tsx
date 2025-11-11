@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import type { ReactElement } from 'react'
 
-export default function Header() {
+export default function Header(): ReactElement {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
 

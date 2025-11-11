@@ -1,6 +1,7 @@
 import Link from 'next/link'
+import type { ReactElement } from 'react'
 
-export default function Footer() {
+export default function Footer(): ReactElement {
   return (
     <footer className="bg-[#1a2332] text-white pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-6">
