@@ -84,6 +84,54 @@ const Home: NextPage = () => {
     },
   ]
 
+  const serviceColumns = [
+    {
+      title: 'Services',
+      items: [
+        'Metal Fabrication',
+        'Field Welding',
+        'Portable Welding',
+        'Manufacturing Machinery',
+        'New Construction',
+        'Retrofits',
+        'Hard Facing',
+        'Torch Cutting'
+      ]
+    },
+    {
+      title: 'Repairs',
+      items: [
+        'Crack Repair',
+        'Equipment Repair',
+        'Fences and Gate Repair',
+        'Trailer Frames and Axle Repairs',
+        'Dumpster Repairs',
+        'Truck and Fleet Repair'
+      ]
+    },
+    {
+      title: 'Types',
+      items: [
+        'Gas Metal Arc Welding (GMAW)',
+        'Metal Inert Gas Welding (MIG)',
+        'Flux-cored Arc Welding (FCAW or FCA)',
+        'Heliarc, Tungsten Inert Gas Welding (TIG)',
+        'Shielded Metal Arc Welding (SMAW)'
+      ]
+    },
+    {
+      title: 'Materials',
+      items: [
+        'Carbon Steel',
+        'Aluminum',
+        'Cast Iron',
+        'Cast Aluminum',
+        'Stainless Steel',
+        'Pipe'
+      ]
+    }
+  ]
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % reviews.length)
@@ -163,7 +211,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Our Services */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-100">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Our Services
@@ -175,21 +223,18 @@ const Home: NextPage = () => {
               The Canadian Mobile Welding is your comprehensive partner for all heavy-duty and commercial welding needs across the GTA. With a fully mobile and equipped unit, we bring precision and reliability directly to your site. Our certified welders specialize in a wide range of materials and applications, ensuring we deliver compliant, durable results every time.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {[
-                'MIG, TIG, Stick & Arc Welding',
-                'Structural Steel Installation',
-                'Aluminum & Stainless Steel Welding',
-                'Custom Metal Fabrication',
-                'Pipe & Tube Welding',
-                'Emergency Breakdown Repair',
-                'Heavy Equipment Repair',
-                'Metal Railing & Gate Installation',
-                'Trailer & Vehicle Frame Repair'
-              ].map((service, i) => (
-                <div key={i} className="flex items-start">
-                  <span className="text-[#ff0000] mr-3 text-xl font-bold">✓</span>
-                  <span className="text-gray-700">{service}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {serviceColumns.map((column, columnIndex) => (
+                <div key={columnIndex} className="bg-white rounded-lg p-6 shadow-md">
+                  <h3 className="text-2xl font-bold text-[#1a2332] mb-6">{column.title}</h3>
+                  <ul className="space-y-3">
+                    {column.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-center gap-3">
+                        <img src='/images/star.png' className='w-6 h-6' />
+                        <span className="text-gray-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
